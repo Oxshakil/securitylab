@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shakil Security Lab</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      color: #00ff00;
+      overflow: hidden;
+    }
+    .matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: -1;
+    }
+    .container {
+      text-align: center;
+      padding-top: 20vh;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 20px #0f0;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    .glitch {
+      color: #00ff00;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      25% { text-shadow: -2px -2px blue; }
+      50% { text-shadow: 2px -2px lime; }
+      75% { text-shadow: -2px 2px yellow; }
+      100% { text-shadow: 2px 2px red; }
+    }
+  </style>
+</head>
+<body>
+  <canvas class="matrix"></canvas>
+  <div class="container">
+    <h1 class="glitch">SH🍀KIL SECURITY LAB</h1>
+    <p>Welcome to the World's Most Secure Hacker-Proof Cyber Fortress 🔐</p>
+    <p>🌐 All intrusions are logged, traced, and reversed ⚔️</p>
+    <p>🛡️ Powered by Shakil Ultra Security v1</p>
+  </div>  <script>
+    const canvas = document.querySelector(".matrix");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    let columns = canvas.width / 20;
+    let drops = [];
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0f0";
+      ctx.font = "20px monospace";
+      for (let i = 0; i < drops.length; i
