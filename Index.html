@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💀 SYSTEM BREACHED | SHAKIL LAB 💻</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: black;
+      color: red;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+    }
+    #canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+    .warning {
+      color: #ff0000;
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 50px;
+      text-shadow: 0 0 10px red;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.1; }
+      100% { opacity: 1; }
+    }
+    .terminal {
+      background: #111;
+      border: 2px solid red;
+      padding: 20px;
+      margin: 40px;
+      font-size: 16px;
+      height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 0 20px red;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff0000; }
+      50% { text-shadow: -2px -2px #ff0000; }
+      100% { text-shadow: 2px 2px #ff0000; }
+    }
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div class="warning">⚠️ SYSTEM BREACHED BY SHAKIL THE HACKER ⚠️</div>
+
+<div class="terminal" id="terminal">
+Initializing...
+</div>
+
+<div class="footer">Tracking IP: 192.168.0.666 | GPS: Jessore, BD | Status: HACKED</div>
+
+<script>
+const term = document.getElementById("terminal");
+const lines = [
+  "[+] Connecting to Target...",
+  "[+] Injecting Exploit...",
+  "[+] Shakil Logger Activated!",
+  "[!] WARNING: Unauthorized Access Detected!",
+  "[+] Downloading /etc/passwd...",
+  "[✓] Success! Root Access Gained.",
+  "[☠️] Spawning Remote Shell...",
+  "[☠️] Accessing Camera Stream...",
+  "[✔️] Location: Penang, MY",
+  "[💀] SYSTEM OVERRIDDEN BY SHAKIL"
+];
+let i = 0;
+function showNext() {
+  if (i < lines.length) {
+    term.innerHTML += "<br>" + lines[i];
+    i++;
+    setTimeout(showNext, 800);
+  }
+}
+showNext();
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+const cols = canvas.width / 20;
+const ypos = Array.from({length: cols}).fill(0);
+
+function matrixRain() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#ff0000";
+  ctx.font = "20px monospace";
+  ypos.forEach((y, index) => {
+    const text = Math.random() > 0.5 ? "0" : "1";
+    ctx.fillText(text, index * 20, y);
+    if (y > canvas.height + Math.random() * 10000) ypos[index] = 0;
+    else ypos[index] = y + 20;
+  });
+}
+setInterval(matrixRain, 50);
+</script>
+</body>
+</html>
